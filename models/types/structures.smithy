@@ -2,7 +2,7 @@ $version: "2.0"
 
 namespace com.consentframework.consentmanagement.api.models.types
 
-@documentation("Unstructured Consent data represented by string key-value pairs. Keys must be between 1-64 characters long, values must be between 1-256 characters long, and up to 32 key-value pairs may be provided.")
+@documentation("Consent data represented by string key-value pairs. Keys must be between 1-64 characters long, values must be between 1-256 characters long, and up to 32 key-value pairs may be provided.")
 @length(max: 32)
 map ConsentData {
     @length(min: 1, max: 64)

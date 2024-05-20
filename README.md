@@ -18,7 +18,9 @@ To build the project for the first time, run
 
 and validate that it completes successfully.
 
-After a successful build, the Smithy API models should be generated at `./build/smithyprojections/consent-management-api-models/source/model/model.json`.
+After a successful build
+* Smithy API models should be generated at `./build/smithyprojections/consent-management-api-models/source/model/model.json`.
+* OpenAPI API models should be generated at `./build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json`.
 
 ### Subsequent builds
 In order to clean up stale build artifacts and rebuild the API models based on your latest changes, run

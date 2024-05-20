@@ -1,4 +1,10 @@
 {
   "version": "1.0",
-  "sources": ["models"]
+  "sources": ["models"],
+  "plugins": {
+    "openapi": {
+      "service": "com.consentframework.consentmanagement.api.models#ConsentManagementApi",
+      "protocol": "aws.protocols#restJson1"
+    }
+  }
 }
