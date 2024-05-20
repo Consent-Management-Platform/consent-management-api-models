@@ -4,20 +4,26 @@ namespace com.consentframework.consentmanagement.api.models.operations
 
 use com.consentframework.consentmanagement.api.models.types#ConsentData
 use com.consentframework.consentmanagement.api.models.types#ConsentExpiryTime
+use com.consentframework.consentmanagement.api.models.types#ConsentId
+use com.consentframework.consentmanagement.api.models.types#ConsentList
 use com.consentframework.consentmanagement.api.models.types#ConsentStatus
 use com.consentframework.consentmanagement.api.models.types#ServiceId
 use com.consentframework.consentmanagement.api.models.types#UserId
 
-@documentation("Create a user Consent for a given service.")
+@documentation("Update a user Consent for a given service.")
 @readonly
-@http(method: "POST", uri: "/v1/consent-management/services/{serviceId}/users/{userId}/consents", code: 200)
-operation CreateServiceUserConsent {
-    input: CreateServiceUserConsentInput
-    output: CreateServiceUserConsentOutput
+@http(method: "PUT", uri: "/v1/consent-management/services/{serviceId}/users/{userId}/consents/{consentId}", code: 200)
+operation UpdateServiceUserConsent {
+    input: UpdateServiceUserConsentInput
+    output: UpdateServiceUserConsentOutput
 }
 
 @input
-structure CreateServiceUserConsentInput {
+structure UpdateServiceUserConsentInput {
+    @required
+    @httpLabel
+    consentId: ConsentId
+
     @required
     @httpLabel
     serviceId: ServiceId
@@ -26,7 +32,6 @@ structure CreateServiceUserConsentInput {
     @httpLabel
     userId: UserId
 
-    @required
     status: ConsentStatus
 
     consentData: ConsentData
@@ -35,4 +40,4 @@ structure CreateServiceUserConsentInput {
 }
 
 @output
-structure CreateServiceUserConsentOutput {}
+structure UpdateServiceUserConsentOutput {}
