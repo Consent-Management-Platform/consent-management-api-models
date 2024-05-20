@@ -6,12 +6,9 @@ We use Smithy to produce protocol and technology agnostic API models that can be
 * API specifications for various types of platforms
 * API clients for various programming languages
 
-## Building
-To build this project, run
-
-```sh
-./gradlew build
-```
+## Useful commands
+* `./gradlew build` - build the project and generate smithy models
+* `./gradlew clean build` - clean up build artifacts and rebuild to generate updated smithy models
 
 ## References
 Smithy documentation: https://smithy.io

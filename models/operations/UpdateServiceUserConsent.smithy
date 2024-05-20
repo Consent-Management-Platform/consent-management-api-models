@@ -11,8 +11,7 @@ use com.consentframework.consentmanagement.api.models.types#ServiceId
 use com.consentframework.consentmanagement.api.models.types#UserId
 
 @documentation("Update a user Consent for a given service.")
-@readonly
-@http(method: "PUT", uri: "/v1/consent-management/services/{serviceId}/users/{userId}/consents/{consentId}", code: 200)
+@http(method: "POST", uri: "/v1/consent-management/services/{serviceId}/users/{userId}/consents/{consentId}", code: 200)
 operation UpdateServiceUserConsent {
     input: UpdateServiceUserConsentInput
     output: UpdateServiceUserConsentOutput

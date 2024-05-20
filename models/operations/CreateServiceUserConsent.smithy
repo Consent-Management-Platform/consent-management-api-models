@@ -9,7 +9,6 @@ use com.consentframework.consentmanagement.api.models.types#ServiceId
 use com.consentframework.consentmanagement.api.models.types#UserId
 
 @documentation("Create a user Consent for a given service.")
-@readonly
 @http(method: "POST", uri: "/v1/consent-management/services/{serviceId}/users/{userId}/consents", code: 200)
 operation CreateServiceUserConsent {
     input: CreateServiceUserConsentInput
