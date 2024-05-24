@@ -2,11 +2,13 @@
 This package defines API models for the Consent Management API.
 
 ## Technologies
-We use Smithy to produce protocol and technology agnostic API models that can be used to automatically generate:
+Smithy is used to produce protocol and technology agnostic API models that can be used to automatically generate:
 * API specifications for various types of platforms
 * API clients for various programming languages
 
-We use Gradle to build the project and manage package dependencies.
+Redoc is used to automatically generate API documentation from our API models.
+
+Gradle is used to build the project and manage package dependencies.
 
 ## Development
 ### First time set-up
@@ -31,6 +33,16 @@ In order to clean up stale build artifacts and rebuild the API models based on y
 
 If you do not clean before building, your local environment may continue to use stale, cached versions of the API models in builds.
 
+### Locally generating API documentation
+Install yq by following your platform's installation instructions at https://github.com/mikefarah/yq.  This is a utility to convert JSON to YAML, which we'll use to convert Smithy's generated OpenAPI JSON spec to YAML, the format required by ReDoc.
+
+Install redoc-cli by running `npm install -g redoc-cli`.  This will be used to generate the ReDoc API documentation.
+
+Run `./gradlew clean build` to build the latest OpenAPI JSON specs.
+
+Run `./scripts/generate-docs.sh` to generate ReDoc API documentation at `build/openapi/ConsentManagementApi.openapi.redoc.html`.
+
 ## References
-* Gradle documentation: https://docs.gradle.org
-* Smithy documentation: https://smithy.io
+* Gradle: https://docs.gradle.org
+* Redoc: https://github.com/Redocly/redoc
+* Smithy: https://smithy.io
