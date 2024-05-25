@@ -39,12 +39,14 @@ fi
 
 # Generate OpenAPI YAML spec from the existing JSON
 OPENAPI_YAML_DIRECTORY="$SCRIPT_DIR/../build/openapi"
-OPENAPI_YAML_FILENAME="ConsentManagementApi.openapi.yaml"
+OPENAPI_YAML_FILEPATH="$OPENAPI_YAML_DIRECTORY/ConsentManagementApi.openapi.yaml"
 mkdir -p $OPENAPI_YAML_DIRECTORY
 yq eval \
     -P $OPENAPI_JSON_FILEPATH \
-    -o yaml > "$OPENAPI_YAML_DIRECTORY/$OPENAPI_YAML_FILENAME"
+    -o yaml > $OPENAPI_YAML_FILEPATH
 
 # Generate ReDoc API documentation from the OpenAPI YAML spec
-cd $OPENAPI_YAML_DIRECTORY
-npx @redocly/cli build-docs $OPENAPI_YAML_FILENAME -o ConsentManagementApi.openapi.redoc.html
+API_HTML_DOCS_DIRECTORY="$SCRIPT_DIR/../build/docs"
+mkdir -p $API_HTML_DOCS_DIRECTORY
+npx @redocly/cli build-docs $OPENAPI_YAML_FILEPATH -o \
+    "$API_HTML_DOCS_DIRECTORY/ConsentManagementApi.openapi.redoc.html"

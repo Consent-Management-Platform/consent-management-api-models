@@ -1,7 +1,29 @@
 name: Generate Consent Management API Docs
-on: [push, pull_request]
+
+on:
+  # Automatically trigger when push to main branch
+  push:
+    branches: ["main"]
+  # Enable running workflow manually from GitHub Actions
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   generate-api-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     name: Generate API Documentation
     runs-on: ubuntu-latest
     steps:
@@ -20,3 +42,12 @@ jobs:
         run: chmod +x ./scripts/generate-docs.sh
       - name: Generate ReDoc API documentation
         run: ./scripts/generate-docs.sh
+      - name: Set up GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload API docs to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build/docs
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
