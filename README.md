@@ -1,7 +1,7 @@
 # consent-management-api-models
 This package defines API models for the Consent Management API.
 
-Latest API documentation: [https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html#operation/ListServiceUserConsent](https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html#operation/ListServiceUserConsent)
+Latest API documentation: [https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html](https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html)
 
 ## Technologies
 Smithy is used to produce protocol and technology agnostic API models that can be used to automatically generate:
