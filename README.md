@@ -44,7 +44,7 @@ Install @redocly/cli by running `npm install -g @redocly/cli`.  This will be use
 
 Run `./gradlew clean build` to build the latest OpenAPI JSON specs.
 
-Run `./scripts/generate-docs.sh` to generate ReDoc API documentation at `build/openapi/ConsentManagementApi.openapi.redoc.html`.
+Run `./scripts/generate-docs.sh` to generate ReDoc API documentation at `build/docs/ConsentManagementApi.openapi.redoc.html`.
 
 ## References
 * GitHub Actions: https://docs.github.com/en/actions
