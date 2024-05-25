@@ -1,12 +1,16 @@
 # consent-management-api-models
 This package defines API models for the Consent Management API.
 
+Latest API documentation: [https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html#operation/ListServiceUserConsent](https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html#operation/ListServiceUserConsent)
+
 ## Technologies
 Smithy is used to produce protocol and technology agnostic API models that can be used to automatically generate:
 * API specifications for various types of platforms
 * API clients for various programming languages
 
 Redoc is used to automatically generate API documentation from our API models.
+
+GitHub Actions are used to automatically generate and deploy HTML API documentation to GitHub Pages after changes are pushed to the main branch.
 
 Gradle is used to build the project and manage package dependencies.
 
@@ -43,6 +47,7 @@ Run `./gradlew clean build` to build the latest OpenAPI JSON specs.
 Run `./scripts/generate-docs.sh` to generate ReDoc API documentation at `build/openapi/ConsentManagementApi.openapi.redoc.html`.
 
 ## References
+* GitHub Actions: https://docs.github.com/en/actions
 * Gradle: https://docs.gradle.org
 * Redoc: https://github.com/Redocly/redoc
 * Smithy: https://smithy.io
