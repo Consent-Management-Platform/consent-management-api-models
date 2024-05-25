@@ -36,7 +36,7 @@ If you do not clean before building, your local environment may continue to use 
 ### Locally generating API documentation
 Install yq by following your platform's installation instructions at https://github.com/mikefarah/yq.  This is a utility to convert JSON to YAML, which we'll use to convert Smithy's generated OpenAPI JSON spec to YAML, the format required by ReDoc.
 
-Install redoc-cli by running `npm install -g redoc-cli`.  This will be used to generate the ReDoc API documentation.
+Install @redocly/cli by running `npm install -g @redocly/cli`.  This will be used to generate the ReDoc API documentation.
 
 Run `./gradlew clean build` to build the latest OpenAPI JSON specs.
 

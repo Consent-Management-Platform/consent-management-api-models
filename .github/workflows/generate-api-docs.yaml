@@ -12,7 +12,7 @@ jobs:
           java-version: 17
       - name: Install pre-requisites
         run: |
-          sudo npm install -g redoc-cli
+          sudo npm install -g @redocly/cli
           sudo snap install yq
       - name: Generate OpenAPI YAML specs
         run: gradle wrapper build
