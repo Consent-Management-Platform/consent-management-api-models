@@ -16,5 +16,7 @@ jobs:
           sudo snap install yq
       - name: Generate OpenAPI YAML specs
         run: gradle wrapper build
+      - name: Grant permission to run generate-docs.sh script
+        run: chmod +x ./scripts/generate-docs.sh
       - name: Generate ReDoc API documentation
         run: ./scripts/generate-docs.sh
