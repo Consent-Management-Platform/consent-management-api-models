@@ -15,6 +15,6 @@ jobs:
           sudo npm install -g redoc-cli
           sudo snap install yq
       - name: Generate OpenAPI YAML specs
-        run: ./gradlew clean build
+        run: ./gradlew build
       - name: Generate ReDoc API documentation
         run: ./scripts/generate-docs.sh
