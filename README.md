@@ -1,7 +1,7 @@
 # consent-management-api-models
 This package defines API models for the Consent Management API.
 
-Latest API documentation: [https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html](https://www.marksayson.com/consent-management-api-models/ConsentManagementApi.openapi.redoc.html)
+Latest API documentation: [https://www.marksayson.com/consent-management-api-models/docs.html](https://www.marksayson.com/consent-management-api-models/docs.html)
 
 ## Technologies
 Smithy is used to produce protocol and technology agnostic API models that can be used to automatically generate:
@@ -44,7 +44,32 @@ Install @redocly/cli by running `npm install -g @redocly/cli`.  This will be use
 
 Run `./gradlew clean build` to build the latest OpenAPI JSON specs.
 
-Run `./scripts/generate-docs.sh` to generate ReDoc API documentation at `build/docs/ConsentManagementApi.openapi.redoc.html`.
+Run the following to download and run scripts/generate-docs.sh from [https://github.com/msayson/smithy-gh-pages-action](https://github.com/msayson/smithy-gh-pages-action) to generate ReDoc API documentation at `build/docs/docs.html`:
+
+From a Unix terminal:
+
+```sh
+mkdir -p build/scripts
+curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/main/scripts/generate-docs.sh
+chmod +x build/scripts/generate-docs.sh
+
+export OPENAPI_JSON_FILEPATH="build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json"
+export OPENAPI_YAML_DIRECTORY="build/openapi"
+export API_HTML_DOCS_DIRECTORY="build/docs"
+./build/scripts/generate-docs.sh
+```
+
+From a Visual Studio Code terminal on Windows:
+
+```sh
+mkdir -p build/scripts
+curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/main/scripts/generate-docs.sh
+
+$env:OPENAPI_JSON_FILEPATH="build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json"
+$env:OPENAPI_YAML_DIRECTORY="build/openapi"
+$env:API_HTML_DOCS_DIRECTORY="build/docs"
+./build/scripts/generate-docs.sh
+```
 
 ## References
 * GitHub Actions: https://docs.github.com/en/actions
