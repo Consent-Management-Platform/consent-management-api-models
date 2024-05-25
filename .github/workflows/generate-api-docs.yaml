@@ -1,0 +1,20 @@
+name: Generate Consent Management API Docs
+on: [push, pull_request]
+jobs:
+  generate-api-docs:
+    name: Generate API Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: 17
+      - name: Install pre-requisites
+        run: |
+          sudo npm install -g redoc-cli
+          sudo snap install yq
+      - name: Generate OpenAPI YAML specs
+        run: ./gradlew clean build
+      - name: Generate ReDoc API documentation
+        run: ./scripts/generate-docs.sh
