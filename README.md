@@ -1,7 +1,7 @@
 # consent-management-api-models
 This package defines API models for the Consent Management API.
 
-See [latest API documentation here](https://www.marksayson.com/consent-management-api-models/refs/heads/main/docs.html).
+See [latest v1 API documentation here](https://www.marksayson.com/consent-management-api-models/v1/docs.html).
 
 ## Technologies
 Smithy is used to produce protocol and technology agnostic API models that can be used to automatically generate:
