@@ -4,8 +4,9 @@ on:
   # Automatically trigger when push changes to models or package config
   push:
     paths:
-      - '**.kts'
       - '**.json'
+      - '**.kts'
+      - '**.yaml'
       - 'models/**'
       - 'gradle.properties'
   # Enable running workflow manually from GitHub Actions
