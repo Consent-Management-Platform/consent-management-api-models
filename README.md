@@ -50,7 +50,7 @@ From a Unix terminal:
 
 ```sh
 mkdir -p build/scripts
-curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/v0.1.6-alpha/scripts/generate-docs.sh
+curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/v1.0.0/scripts/generate-docs.sh
 chmod +x build/scripts/generate-docs.sh
 
 export OPENAPI_JSON_FILEPATH="build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json"
@@ -64,7 +64,7 @@ From a Visual Studio Code terminal on Windows:
 
 ```sh
 mkdir -p build/scripts
-curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/v0.1.6-alpha/scripts/generate-docs.sh
+curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/v1.0.0/scripts/generate-docs.sh
 
 $env:OPENAPI_JSON_FILEPATH="build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json"
 $env:OPENAPI_YAML_DIRECTORY="build/openapi"
