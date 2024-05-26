@@ -50,12 +50,13 @@ From a Unix terminal:
 
 ```sh
 mkdir -p build/scripts
-curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/main/scripts/generate-docs.sh
+curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/v0.1.6-alpha/scripts/generate-docs.sh
 chmod +x build/scripts/generate-docs.sh
 
 export OPENAPI_JSON_FILEPATH="build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json"
 export OPENAPI_YAML_DIRECTORY="build/openapi"
 export API_HTML_DOCS_DIRECTORY="build/docs"
+export API_HTML_DOC_FILENAME="docs.html"
 ./build/scripts/generate-docs.sh
 ```
 
@@ -63,11 +64,12 @@ From a Visual Studio Code terminal on Windows:
 
 ```sh
 mkdir -p build/scripts
-curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/main/scripts/generate-docs.sh
+curl -o build/scripts/generate-docs.sh https://raw.githubusercontent.com/msayson/smithy-gh-pages-action/v0.1.6-alpha/scripts/generate-docs.sh
 
 $env:OPENAPI_JSON_FILEPATH="build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json"
 $env:OPENAPI_YAML_DIRECTORY="build/openapi"
 $env:API_HTML_DOCS_DIRECTORY="build/docs"
+$env:API_HTML_DOC_FILENAME="docs.html"
 ./build/scripts/generate-docs.sh
 ```
 
