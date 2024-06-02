@@ -1,8 +1,9 @@
 name: Generate Consent Management API Docs
 
 on:
-  # Automatically trigger when push changes to models or package config
+  # Automatically trigger when push model/package config changes to main branch
   push:
+    branches: ["main"]
     paths:
       - '**.json'
       - '**.kts'
@@ -28,4 +29,4 @@ jobs:
         with:
           gradle-smithy-task-name: build
           openapi-json-filepath: build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json
-          api-docs-filepath: ${{ github.ref_name }}/docs.html
+          api-docs-filepath: v1/docs.html
