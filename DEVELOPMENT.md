@@ -37,3 +37,14 @@ Install @redocly/cli by running `npm install -g @redocly/cli`.  This will be use
 
 ### Running script to generate API docs
 Run `./scripts/generate-local-api-docs.sh` to locally generate ReDoc API documentation at `build/docs/docs.html`.
+
+## Publishing release artifacts to GitHub Packages
+Follow [GitHub's "Managing your personal access tokens" guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to set up a personal access token that has write permissions to your GitHub Packages.
+
+Set up a `GITHUB_USERNAME` environment variable matching your GitHub username.
+
+Set up a `GITHUB_TOKEN` environment variable matching your GitHub personal access token.
+
+Run `gradle wrapper publish`.
+
+Ref: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#authenticating-to-github-packages
