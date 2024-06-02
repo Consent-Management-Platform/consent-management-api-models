@@ -31,6 +31,8 @@ Install jq by following instructions at https://jqlang.github.io/jq/download/.  
 
 Install yq by following instructions at https://github.com/mikefarah/yq.  This is a utility to convert JSON to YAML, which we'll use to convert Smithy's generated OpenAPI JSON spec to YAML, the format required by ReDoc.
 
+Install the GitHub CLI, gh, by following instructions at https://github.com/cli/cli#installation.  Once installed, set up your credentials via `gh auth login`.
+
 Install @redocly/cli by running `npm install -g @redocly/cli`.  This will be used to generate the ReDoc API documentation.
 
 ### Running script to generate API docs
