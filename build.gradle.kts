@@ -1,7 +1,9 @@
 plugins {
+  java
   `java-library`
   `maven-publish`
   id("software.amazon.smithy.gradle.smithy-jar")
+  id("org.openapi.generator") version("7.5.0")
 }
 
 repositories {
@@ -19,6 +21,41 @@ dependencies {
   implementation("software.amazon.smithy:smithy-openapi:$smithyVersion")
 }
 
+val mavenPackageGroupId = "com.consentframework.consentmanagement"
+val mavenPackageArtifactId = "consentmanagement-api-models"
+val mavenPackageVersion = "0.2.1"
+
+val openApiGeneratedSourcesFolder = "${layout.buildDirectory.get()}/generated-sources"
+
+// Generate Java model classes from OpenAPI JSON spec
+openApiGenerate {
+  generatorName.set("java")
+  inputSpec.set("$rootDir/build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json")
+  outputDir.set(openApiGeneratedSourcesFolder)
+  modelPackage.set("com.consentframework.consentmanagement.api.models")
+  groupId.set(mavenPackageGroupId)
+  id.set(mavenPackageArtifactId)
+  version.set(mavenPackageVersion)
+
+  // Configure to only generate model classes
+  globalProperties.set(mapOf(
+    "apis" to "false",
+    "apiTests" to "false",
+    "models" to "",
+    "modelDocs" to "false",
+    "modelTests" to "false"
+  ))
+}
+
+java {
+  sourceSets {
+    main {
+      listOf("${openApiGeneratedSourcesFolder}/src/main/java")
+    }
+  }
+}
+
+// Publish jar to GitHub Packages so can import into other repositories
 publishing {
   repositories {
     maven {
@@ -33,11 +70,19 @@ publishing {
 
   publications {
     register<MavenPublication>("gpr") {
-      groupId = "com.consentframework.consentmanagement"
-      artifactId = "consentmanagement-api-models"
-      version = "0.2.1"
+      groupId = mavenPackageGroupId
+      artifactId = mavenPackageArtifactId
+      version = mavenPackageVersion
 
       from(components["java"])
     }
   }
+}
+
+tasks.openApiGenerate {
+  dependsOn(tasks.smithyBuild)
+}
+
+tasks.compileJava {
+  dependsOn(tasks.openApiGenerate)
 }

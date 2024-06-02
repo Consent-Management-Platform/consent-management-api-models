@@ -29,5 +29,8 @@ replay_pid*
 # Ignore Gradle build output directory
 build
 
+# Ignore code generated from OpenAPI spec
+generated
+
 # Ignore IDE generated files
 .vscode
