@@ -12,4 +12,6 @@ See [latest v1 API documentation here](https://www.marksayson.com/consent-manage
 
 [GitHub Actions](https://docs.github.com/en/actions) are used to automatically generate and deploy HTML API documentation to [GitHub Pages](https://pages.github.com/) after changes are pushed to the main branch.
 
+[GitHub Packages](https://github.com/features/packages) are used to release artifacts to a GitHub's version of Maven, so that the API models can be imported into other packages.
+
 [Gradle](https://docs.gradle.org) is used to build the project and manage package dependencies.
