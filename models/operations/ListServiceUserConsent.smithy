@@ -2,6 +2,7 @@ $version: "2.0"
 
 namespace com.consentframework.consentmanagement.api.models.operations
 
+use com.consentframework.consentmanagement.api.models.exceptions#InternalServiceException
 use com.consentframework.consentmanagement.api.models.types#ConsentList
 use com.consentframework.consentmanagement.api.models.types#ServiceId
 use com.consentframework.consentmanagement.api.models.types#UserId
@@ -12,6 +13,9 @@ use com.consentframework.consentmanagement.api.models.types#UserId
 operation ListServiceUserConsent {
     input: ListServiceUserConsentInput
     output: ListServiceUserConsentOutput
+    errors: [
+        InternalServiceException
+    ]
 }
 
 @input
