@@ -45,6 +45,6 @@ Set up a `GITHUB_USERNAME` environment variable matching your GitHub username.
 
 Set up a `GITHUB_TOKEN` environment variable matching your GitHub personal access token.
 
-Run `gradle wrapper publish`.
+Run `./gradlew publish`.
 
 Ref: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#authenticating-to-github-packages

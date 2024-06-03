@@ -26,11 +26,9 @@ replay_pid*
 # Ignore Gradle project-specific cache directory
 .gradle
 
-# Ignore Gradle build output directory
+# Ignore Gradle/project-generated output directories
+bin
 build
-
-# Ignore code generated from OpenAPI spec
-generated
 
 # Ignore IDE generated files
 .vscode
