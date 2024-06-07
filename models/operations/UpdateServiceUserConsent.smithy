@@ -3,7 +3,7 @@ $version: "2.0"
 namespace com.consentframework.consentmanagement.api.models.operations
 
 use com.consentframework.consentmanagement.api.models.exceptions#InternalServiceException
-use com.consentframework.consentmanagement.api.models.exceptions#InvalidConsentDataException
+use com.consentframework.consentmanagement.api.models.exceptions#IllegalArgumentException
 use com.consentframework.consentmanagement.api.models.exceptions#NotFoundException
 use com.consentframework.consentmanagement.api.models.types#ConsentData
 use com.consentframework.consentmanagement.api.models.types#ConsentExpiryTime
@@ -19,8 +19,8 @@ operation UpdateServiceUserConsent {
     input: UpdateServiceUserConsentInput
     output: UpdateServiceUserConsentOutput
     errors: [
+        IllegalArgumentException,
         InternalServiceException,
-        InvalidConsentDataException,
         NotFoundException
     ]
 }

@@ -5,7 +5,7 @@ namespace com.consentframework.consentmanagement.api.models.exceptions
 @documentation("This exception is thrown when submitting invalid Consent data.")
 @error("client")
 @httpError(400)
-structure InvalidConsentDataException {
+structure IllegalArgumentException {
   message: String
 }
 
