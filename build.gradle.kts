@@ -30,7 +30,7 @@ dependencies {
 }
 
 val mavenPackageGroupId = "com.consentframework.consentmanagement"
-val mavenPackageVersion = "0.2.5"
+val mavenPackageVersion = "0.2.6"
 
 val openApiGeneratedSourcesFolder = "${layout.buildDirectory.get()}/generated-sources"
 
