@@ -39,6 +39,10 @@ structure UpdateServiceUserConsentInput {
     @httpLabel
     userId: UserId
 
+    @documentation("Updated consent version, used to conditionally write only if the stored data has the prior version, to protect against race conditions or writing stale data.")
+    @required
+    consentVersion: Integer
+
     status: ConsentStatus
 
     consentData: ConsentData
