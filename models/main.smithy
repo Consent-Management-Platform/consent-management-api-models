@@ -11,7 +11,7 @@ use com.consentframework.consentmanagement.api.models.operations#UpdateServiceUs
 @title("Consent Management API")
 @restJson1
 service ConsentManagementApi {
-    version: "2024-06-07"
+    version: "2024-06-10"
     operations: [
         CreateServiceUserConsent,
         GetServiceUserConsent,

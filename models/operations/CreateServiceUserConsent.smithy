@@ -2,9 +2,9 @@ $version: "2.0"
 
 namespace com.consentframework.consentmanagement.api.models.operations
 
+use com.consentframework.consentmanagement.api.models.exceptions#BadRequestException
 use com.consentframework.consentmanagement.api.models.exceptions#ConflictingResourceException
 use com.consentframework.consentmanagement.api.models.exceptions#InternalServiceException
-use com.consentframework.consentmanagement.api.models.exceptions#IllegalArgumentException
 use com.consentframework.consentmanagement.api.models.types#ConsentData
 use com.consentframework.consentmanagement.api.models.types#ConsentExpiryTime
 use com.consentframework.consentmanagement.api.models.types#ConsentId
@@ -18,8 +18,8 @@ operation CreateServiceUserConsent {
     input: CreateServiceUserConsentInput
     output: CreateServiceUserConsentOutput
     errors: [
+        BadRequestException,
         ConflictingResourceException,
-        IllegalArgumentException,
         InternalServiceException
     ]
 }

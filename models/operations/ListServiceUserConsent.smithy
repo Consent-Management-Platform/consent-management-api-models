@@ -2,7 +2,7 @@ $version: "2.0"
 
 namespace com.consentframework.consentmanagement.api.models.operations
 
-use com.consentframework.consentmanagement.api.models.exceptions#IllegalArgumentException
+use com.consentframework.consentmanagement.api.models.exceptions#BadRequestException
 use com.consentframework.consentmanagement.api.models.exceptions#InternalServiceException
 use com.consentframework.consentmanagement.api.models.types#ConsentList
 use com.consentframework.consentmanagement.api.models.types#ServiceId
@@ -15,7 +15,7 @@ operation ListServiceUserConsent {
     input: ListServiceUserConsentInput
     output: ListServiceUserConsentOutput
     errors: [
-        IllegalArgumentException,
+        BadRequestException,
         InternalServiceException
     ]
 }
