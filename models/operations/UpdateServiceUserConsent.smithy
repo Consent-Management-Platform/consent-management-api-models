@@ -2,6 +2,7 @@ $version: "2.0"
 
 namespace com.consentframework.consentmanagement.api.models.operations
 
+use com.consentframework.consentmanagement.api.models.exceptions#ConflictingResourceException
 use com.consentframework.consentmanagement.api.models.exceptions#InternalServiceException
 use com.consentframework.consentmanagement.api.models.exceptions#IllegalArgumentException
 use com.consentframework.consentmanagement.api.models.exceptions#NotFoundException
@@ -19,6 +20,7 @@ operation UpdateServiceUserConsent {
     input: UpdateServiceUserConsentInput
     output: UpdateServiceUserConsentOutput
     errors: [
+        ConflictingResourceException,
         IllegalArgumentException,
         InternalServiceException,
         NotFoundException
