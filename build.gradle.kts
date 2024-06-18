@@ -30,7 +30,7 @@ dependencies {
 }
 
 val mavenPackageGroupId = "com.consentframework.consentmanagement"
-val mavenPackageVersion = "0.2.9"
+val mavenPackageVersion = "0.2.8"
 
 val openApiGeneratedSourcesFolder = "${layout.buildDirectory.get()}/generated-sources"
 
@@ -81,12 +81,6 @@ publishing {
       version = mavenPackageVersion
 
       from(components["java"])
-
-      artifact("$rootDir/build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json") {
-        artifactId = "consentmanagement-api-openapi-spec"
-        extension = "json"
-        builtBy(tasks.openApiGenerate)
-      }
     }
   }
 }
