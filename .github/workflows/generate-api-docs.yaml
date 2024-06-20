@@ -31,7 +31,7 @@ jobs:
             [
               {
                 "openapi-json-filepath": "openapi/ConsentManagementApi.openapi.json",
-                "api-doc-filepath": "docs.html"
+                "api-doc-filepath": "v1/docs.html"
               }
             ]
-          api-docs-dir: v1
+          api-docs-dir: docs
