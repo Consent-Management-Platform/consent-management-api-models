@@ -14,6 +14,8 @@ dependencies {
   // Smithy models and OpenAPI JSON spec generator
   val smithyVersion: String by project
   smithyCli("software.amazon.smithy:smithy-cli:$smithyVersion")
+  implementation("software.amazon.smithy:smithy-aws-apigateway-openapi:$smithyVersion")
+  implementation("software.amazon.smithy:smithy-aws-apigateway-traits:$smithyVersion")
   implementation("software.amazon.smithy:smithy-aws-traits:$smithyVersion")
   implementation("software.amazon.smithy:smithy-linters:$smithyVersion")
   implementation("software.amazon.smithy:smithy-model:$smithyVersion")
@@ -22,8 +24,6 @@ dependencies {
   // Dependencies required by OpenAPI Generator-generated classes
   val jacksonVersion = "2.17.1"
   implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")
-  implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
-  implementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
   implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
   implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
   implementation("org.openapitools:jackson-databind-nullable:0.2.6")
