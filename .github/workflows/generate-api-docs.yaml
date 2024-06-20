@@ -25,8 +25,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate API docs and deploy to GitHub Pages
-        uses: msayson/smithy-gh-pages-action@v1.1.0
+        uses: msayson/openapi-github-pages-action@v2.0.0
         with:
-          gradle-smithy-task-name: build
-          openapi-json-filepath: build/smithyprojections/consent-management-api-models/source/openapi/ConsentManagementApi.openapi.json
-          api-docs-filepath: v1/docs.html
+          api-configs: |-
+            [
+              {
+                "openapi-json-filepath": "openapi/ConsentManagementApi.openapi.json",
+                "api-doc-filepath": "docs.html"
+              }
+            ]
+          api-docs-dir: v1
