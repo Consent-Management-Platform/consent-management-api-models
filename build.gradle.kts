@@ -97,3 +97,13 @@ tasks.openApiGenerate {
 tasks.compileJava {
   dependsOn(tasks.openApiGenerate)
 }
+
+tasks.register<Copy>("copyOpenApiSpec") {
+  from("${layout.buildDirectory.get()}/smithyprojections/consent-management-api-models/source/openapi")
+  into("openapi")
+}
+
+// Copy OpenApi spec to openapi directory after every build
+tasks.named("build") {
+  finalizedBy("copyOpenApiSpec")
+}
