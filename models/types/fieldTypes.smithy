@@ -17,6 +17,9 @@ string ServiceId with [UniqueId]
 @documentation("Unique identifier for a user.")
 string UserId with [UniqueId]
 
+@documentation("Consent type.")
+string ConsentType with [UniqueId]
+
 @documentation("Time when the Consent automatically expires, using the ISO 8601 format.")
 @timestampFormat("date-time")
 timestamp ConsentExpiryTime

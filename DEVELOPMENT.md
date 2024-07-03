@@ -45,6 +45,10 @@ Set up a `GITHUB_USERNAME` environment variable matching your GitHub username.
 
 Set up a `GITHUB_TOKEN` environment variable matching your GitHub personal access token.
 
-Run `./gradlew publish`.
+Increment the package's Maven package version in `build.gradle.kts`, and update the service version date in `/models/main.smithy` to the current date.
+
+Run `./gradlew clean build` to ensure build artifacts are based on the latest Smithy models.
+
+Run `./gradlew publish` to publish the new GitHub Package version.
 
 Ref: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#authenticating-to-github-packages

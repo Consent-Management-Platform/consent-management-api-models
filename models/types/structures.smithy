@@ -29,6 +29,8 @@ structure Consent {
     @required
     status: ConsentStatus
 
+    consentType: ConsentType
+
     consentData: ConsentData
 
     expiryTime: ConsentExpiryTime

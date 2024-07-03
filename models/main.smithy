@@ -24,7 +24,7 @@ use com.consentframework.consentmanagement.api.models.operations#UpdateServiceUs
     arnNamespace: "execute-api"
 )
 service ConsentManagementApi {
-    version: "2024-06-10"
+    version: "2024-07-03"
     operations: [
         CreateServiceUserConsent,
         GetServiceUserConsent,
