@@ -11,6 +11,7 @@ use com.consentframework.consentmanagement.api.models.types#ConsentExpiryTime
 use com.consentframework.consentmanagement.api.models.types#ConsentId
 use com.consentframework.consentmanagement.api.models.types#ConsentList
 use com.consentframework.consentmanagement.api.models.types#ConsentStatus
+use com.consentframework.consentmanagement.api.models.types#ConsentType
 use com.consentframework.consentmanagement.api.models.types#ServiceId
 use com.consentframework.consentmanagement.api.models.types#UserId
 
@@ -46,6 +47,8 @@ structure UpdateServiceUserConsentInput {
     consentVersion: Integer
 
     status: ConsentStatus
+
+    consentType: ConsentType
 
     consentData: ConsentData
 

@@ -453,6 +453,11 @@
                     "status": {
                         "$ref": "#/components/schemas/ConsentStatus"
                     },
+                    "consentType": {
+                        "type": "string",
+                        "pattern": "^[\\w\\-\\.]{3,128}$",
+                        "description": "Consent type."
+                    },
                     "consentData": {
                         "$ref": "#/components/schemas/ConsentData"
                     },
@@ -530,6 +535,11 @@
                     },
                     "status": {
                         "$ref": "#/components/schemas/ConsentStatus"
+                    },
+                    "consentType": {
+                        "type": "string",
+                        "pattern": "^[\\w\\-\\.]{3,128}$",
+                        "description": "Consent type."
                     },
                     "consentData": {
                         "$ref": "#/components/schemas/ConsentData"

@@ -9,6 +9,7 @@ use com.consentframework.consentmanagement.api.models.types#ConsentData
 use com.consentframework.consentmanagement.api.models.types#ConsentExpiryTime
 use com.consentframework.consentmanagement.api.models.types#ConsentId
 use com.consentframework.consentmanagement.api.models.types#ConsentStatus
+use com.consentframework.consentmanagement.api.models.types#ConsentType
 use com.consentframework.consentmanagement.api.models.types#ServiceId
 use com.consentframework.consentmanagement.api.models.types#UserId
 
@@ -36,6 +37,8 @@ structure CreateServiceUserConsentInput {
 
     @required
     status: ConsentStatus
+
+    consentType: ConsentType
 
     consentData: ConsentData
 
