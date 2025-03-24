@@ -1,4 +1,7 @@
 # consent-management-api-models
+
+[![Generate API Docs](https://github.com/Consent-Management-Platform/consent-management-api-models/actions/workflows/generate-api-docs.yaml/badge.svg?branch=main)](https://github.com/Consent-Management-Platform/consent-management-api-models/actions/workflows/generate-api-docs.yaml)
+
 This package defines API models for the Consent Management API.
 
 See [latest v1 API documentation here](https://consent-management-platform.github.io/consent-management-api-models/v1/docs.html).

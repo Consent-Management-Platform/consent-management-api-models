@@ -1,4 +1,4 @@
-name: Generate Consent Management API Docs
+name: Generate API Docs
 
 on:
   # Automatically trigger when push model/package config changes to main branch
