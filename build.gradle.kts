@@ -8,6 +8,15 @@ plugins {
 
 repositories {
   mavenCentral()
+  repositories {
+    maven {
+      url = uri("https://maven.pkg.github.com/Consent-Management-Platform/consent-shared-smithy-models")
+      credentials {
+        username = project.findProperty("gpr.usr") as String? ?: System.getenv("GITHUB_USERNAME")
+        password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+      }
+    }
+  }
 }
 
 dependencies {
@@ -21,6 +30,9 @@ dependencies {
   implementation("software.amazon.smithy:smithy-model:$smithyVersion")
   implementation("software.amazon.smithy:smithy-openapi:$smithyVersion")
 
+  // Shared Consent Framework Smithy models
+  implementation("com.consentframework:consent-shared-smithy-models:0.0.1")
+
   // Dependencies required by OpenAPI Generator-generated classes
   val jacksonVersion = "2.17.1"
   implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")
@@ -30,7 +42,7 @@ dependencies {
 }
 
 val mavenPackageGroupId = "com.consentframework.consentmanagement"
-val mavenPackageVersion = "0.2.10"
+val mavenPackageVersion = "0.3.0"
 
 val openApiGeneratedSourcesFolder = "${layout.buildDirectory.get()}/generated-sources"
 

@@ -2,11 +2,11 @@ $version: "2.0"
 
 namespace com.consentframework.consentmanagement.api.models.operations
 
-use com.consentframework.consentmanagement.api.models.exceptions#BadRequestException
-use com.consentframework.consentmanagement.api.models.exceptions#InternalServiceException
-use com.consentframework.consentmanagement.api.models.types#ConsentList
-use com.consentframework.consentmanagement.api.models.types#ServiceId
-use com.consentframework.consentmanagement.api.models.types#UserId
+use com.consentframework.shared.models.consent#ConsentList
+use com.consentframework.shared.models.consent#ServiceId
+use com.consentframework.shared.models.consent#UserId
+use com.consentframework.shared.models.exceptions#InternalServiceException
+use com.consentframework.shared.models.exceptions#BadRequestException
 
 @documentation("List consents a user has granted to a given service.")
 @readonly
